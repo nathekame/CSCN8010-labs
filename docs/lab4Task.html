@@ -15466,8 +15466,8 @@ class="
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-<span class="k">for</span> <span class="n">degree</span><span class="p">,</span> <span class="n">train_error</span><span class="p">,</span> <span class="n">val_error</span><span class="p">,</span> <span class="n">test_error</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">degrees</span><span class="p">,</span> <span class="n">train_errors</span><span class="p">,</span> <span class="n">val_errors</span><span class="p">,</span> <span class="n">test_errors</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Degree </span><span class="si">{</span><span class="n">degree</span><span class="si">}</span><span class="s1"> - Train Error: </span><span class="si">{</span><span class="n">train_error</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">, Validation Error: </span><span class="si">{</span><span class="n">val_error</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">, Test Error: </span><span class="si">{</span><span class="n">test_error</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="c1"># for degree, train_error, val_error, test_error in zip(degrees, train_errors, val_errors, test_errors):</span>
+<span class="c1">#     print(f&#39;Degree {degree} - Train Error: {train_error:.2f}, Validation Error: {val_error:.2f}, Test Error: {test_error:.2f}&#39;)</span>
 </pre></div>
 
      </div>
@@ -15653,7 +15653,7 @@ class="
     <span class="s1">&#39;MAE&#39;</span><span class="p">:</span> <span class="n">mae_scores</span>
 <span class="p">})</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">result_df</span><span class="p">)</span>
+<span class="c1"># print(result_df)</span>
 </pre></div>
 
      </div>
@@ -15763,12 +15763,12 @@ class="
 </div>
 </div>
 </div>
-</div><div  class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div  class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[90]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[159]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">poly</span> <span class="o">=</span> <span class="n">PolynomialFeatures</span><span class="p">(</span><span class="n">degree</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -15786,39 +15786,15 @@ class="
 
 <span class="n">mae_test</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_test_pred</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Degree 1 Model on Test Set:&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;R-squared: </span><span class="si">{</span><span class="n">r2_test</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;MSE: </span><span class="si">{</span><span class="n">mse_test</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;MAE: </span><span class="si">{</span><span class="n">mae_test</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># print(f&quot;Degree 1 Model on Test Set:&quot;)</span>
+<span class="c1"># print(f&quot;R-squared: {r2_test:.4f}&quot;)</span>
+<span class="c1"># print(f&quot;MSE: {mse_test:.4f}&quot;)</span>
+<span class="c1"># print(f&quot;MAE: {mae_test:.4f}&quot;)</span>
 </pre></div>
 
      </div>
 </div>
 </div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Degree 1 Model on Test Set:
-R-squared: 0.2592
-MSE: 4206.3947
-MAE: 53.0796
-</pre>
-</div>
-</div>
-
-</div>
-
 </div>
 
 </div>
@@ -15918,7 +15894,7 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[158]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[161]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">bmiValue</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;bmi&#39;</span><span class="p">]</span>
@@ -15930,9 +15906,9 @@ class="
 <span class="n">intercept</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">intercept_</span>
 <span class="n">slope</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">intercept</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">slope</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">bmiValue</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="c1"># print(round(intercept, 2))</span>
+<span class="c1"># print(round(slope, 2))</span>
+<span class="c1"># print(round(bmiValue, 2))</span>
 
 <span class="n">result</span> <span class="o">=</span> <span class="mf">151.04</span> <span class="o">+</span> <span class="mf">988.42</span> <span class="o">*</span> <span class="mf">0.04</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Manually Computed Result: </span><span class="si">{</span><span class="n">result</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -15959,10 +15935,7 @@ class="
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>151.04
-988.42
-0.04
-
+<pre>
 Manually Computed Result: 190.58
 Result Computed using the model&#39;s predict method: 190.58
 </pre>
@@ -16012,10 +15985,9 @@ Result Computed using the model&#39;s predict method: 190.58
 
     <span class="n">num_parameters</span> <span class="o">=</span> <span class="n">X_poly</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Degree </span><span class="si">{</span><span class="n">degree</span><span class="si">}</span><span class="s2"> Polynomial:&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of Features: </span><span class="si">{</span><span class="n">num_features</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of Trainable Parameters: </span><span class="si">{</span><span class="n">num_parameters</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">()</span>
+    <span class="c1"># print(f&quot;Degree {degree} Polynomial:&quot;)</span>
+    <span class="c1"># print(f&quot;Number of Features: {num_features}&quot;)</span>
+    <span class="c1"># print(f&quot;Number of Trainable Parameters: {num_parameters}&quot;)</span>
 </pre></div>
 
      </div>
