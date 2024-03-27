@@ -164,4 +164,17 @@ cython_debug/
 #.idea/
 
 
+# models folder
+models/
+
+# data folder
+data/
+
+
+# data folder
+dog_classification_checkpoint/
+
+# data folder
+cat_classification_checkpoint/
+
 
